@@ -6,7 +6,6 @@
       </head>  
 
 <?php
-require(dirname(__DIR__)."/models/user.php");
 $user = new User();
 $users = $user->getAll();
 
@@ -25,7 +24,7 @@ $users = $user->getAll();
                 <td><?=$item['lname']?></td>
                 <td><?=$item['phone']?></td>
                 <td><?=$item['email']?></td>
-                <td><a href="editPage.php?id=<?=$item['id']?>" class='btn btn-success'>Edit</a></td>
+                <td><a href="index.php?resource=user&resourceid=<?=$item['id']?>&action=edit" class='btn btn-success'>Edit</a></td>
                 </tr><?php
     endforeach;?>
     </body>

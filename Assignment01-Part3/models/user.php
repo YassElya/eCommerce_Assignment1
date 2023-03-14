@@ -1,12 +1,5 @@
 <?php
 
-    // __DIR__ -> this predefined constant gives the path to the current directory containing this file
-    // __DIR__ -> c:\xampp\htdocs\hrapp\models\
-
-    // dirname() -> a predefined function in PHP that returns the parent directory path of the parameter
-
-    // dirname(__DIR__) -> c:\xampp\htdocs\hrapp
-
     require(dirname(__DIR__)."/core/dbconnectionmanager.php");
 
 class User{
@@ -55,14 +48,6 @@ class User{
 
     }
 }
-
-// TDD: Test driven development
-// Test the code before you continue
-
-// TEST 
-//$employee = new Employee();
-//$employees = $employee->getALL();
-//var_dump($employees);
 
 
 ?>

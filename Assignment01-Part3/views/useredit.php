@@ -6,15 +6,19 @@
         </head>
         <h1>Edit profile</h1>
         <?php 
-        require(dirname(__DIR__)."\models\user.php");
-        $id=$_GET['id'];
+        $id = 0;
+        if (isset($_GET)) {
+            if (isset($_GET['resourceid'])) {
+              $id = $_GET['resourceid'];
+            }
+        }
         $user=new User();
         $user1=$user->getById($id);
           if(isset($_POST['update'])){
           $editedUser=new User($id,$_POST['fname'],$_POST['lname'],$_POST['phone'],$_POST['email']);
           $result=$editedUser->update();
           if($result){
-            header('location:index.php');
+            header('location: index.php?resource=user&resourceid=' . $id . '&action=list');
           }else{
             echo "Error!";
           }

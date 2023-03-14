@@ -8,7 +8,6 @@ class UserController{
         if(isset($_GET)){
             if(isset($_GET['action'])){
                 $action = $_GET['action'];
-                $viewFile = "user".$action;
                 $viewClass = "\\views\\"."user".$action;
                 if(class_exists($viewClass)){
 
@@ -18,4 +17,5 @@ class UserController{
         }
     }
 }
+
 ?>
